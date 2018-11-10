@@ -5,11 +5,12 @@ class InputForm extends Component {
 
     render() {
       return (
-          <form>
-            <div>
-              <input className="input-field" type="text" aria-label="input search" placeholder={this.props.placeholder} /> 
-            </div>
-          </form>
+        <div className="input-container">
+            <form>
+                <input className="input-field" type="text" aria-label="input search" placeholder={this.props.placeholder} /> 
+            </form>
+          </div>
+
       )
     }
   }
