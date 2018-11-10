@@ -16,6 +16,28 @@
     margin: 30px 5% 0px;
 }
 
+.input-field:focus {
+    border: 3px solid darkgray;
+    outline: 0;
+}
+
+.clear-input {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../images/close.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 20px 20px;
+    position: absolute; 
+    z-index: 1;
+    top: 55px;
+    right: 15%;
+    border: none;
+}
+
+.clear-input:focus {
+    outline: 0;
+}
 
 
 
