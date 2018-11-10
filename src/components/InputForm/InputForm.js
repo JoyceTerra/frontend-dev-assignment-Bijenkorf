@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import  './InputForm.css'
 import Axios from 'axios';
+import ItemList from '../ItemList/ItemList'
+import  './InputForm.css'
 
 class InputForm extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class InputForm extends Component {
                         name="input" 
                         aria-label="input search" 
                         value={this.state.search} 
+                        onKeyUp={this.apiCall}
                         onFocus={this.setActive} 
                         onChange={(e) => this.handleChange(e)} 
                         placeholder={this.props.placeholder} 
@@ -50,6 +52,8 @@ class InputForm extends Component {
                         type="reset" 
                         onClick={this.resetSearch} >
             </button>}
+            {this.state.search.length > 2 && 
+            <ItemList list={this.state.results.suggestions}/>}
           </form>
         </div>
       )

@@ -15,6 +15,7 @@ describe('InputForm', () => {
     const instance = form.instance()
     const handleChange = sinon.spy(instance, 'handleChange')
     const setActive = sinon.spy(instance, 'setActive')
+    const resetSearch = sinon.spy(instance, 'resetSearch')
 
     it('is wrapped in a div', () => {
       expect(wrapper).to.have.tagName('div')
