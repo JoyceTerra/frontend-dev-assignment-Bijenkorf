@@ -1,0 +1,24 @@
+.input-field {
+    width: 90%;
+    height: 70px;
+    border: 3px solid lightgray;
+    border-radius: 3px;
+    font-size: 1.5em;
+    color: gray;
+    box-sizing: border-box;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    background-image: url('../../images/magnifier.png');
+    background-repeat: no-repeat;
+    background-position: 98% 17px;
+    background-size: 30px 30px;
+    margin: 30px 5% 0px;
+}
+
+
+
+
+
+
+
