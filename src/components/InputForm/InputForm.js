@@ -35,7 +35,11 @@ class InputForm extends Component {
                         onChange={(e) => this.handleChange(e)} 
                         placeholder={this.props.placeholder} 
               /> {console.log(this.state)}
-            <button className="clear-input" type="reset" onClick={this.resetSearch} ></button>
+            {this.state.search && 
+            <button className="clear-input" 
+                        type="reset" 
+                        onClick={this.resetSearch} >
+            </button>}
           </form>
         </div>
       )
