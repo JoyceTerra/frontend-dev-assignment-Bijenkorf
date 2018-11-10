@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 import ItemList from '../ItemList/ItemList'
 import  './InputForm.css'
 
@@ -25,13 +25,24 @@ class InputForm extends Component {
     this.setState({search: ''})
   }
 
+
+  // apiCall = () => {
+  //   axios.get(`http://localhost:5000/search?q= ${this.state.search}`)
+  //       .then(result => result.json())
+  //       .then(response => {
+  //         const search = reponse.data.suggestions.filter(i=> i.searchterm.includes(this.state.search))
+  //         this.setState({result: search})
+  //       })
+  //       .catch(err => console.log(err))
+  //   }
+  
   apiCall = () => {
-    Axios.get(`http://localhost:5000/search?q= ${this.state.search}`)
+    axios.get(`http://localhost:5000/search?q= ${this.state.search}`)
     .then(response => {
       this.setState({results: response.data})
     })
     .catch(error => console.log(error))
-  }
+   }
 
     render() {
       return (
