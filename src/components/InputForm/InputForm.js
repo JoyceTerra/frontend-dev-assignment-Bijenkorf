@@ -25,25 +25,13 @@ class InputForm extends Component {
     this.setState({search: ''})
   }
 
-
-  // apiCall = () => {
-  //   axios.get(`http://localhost:5000/search?q= ${this.state.search}`)
-  //       .then(result => result.json())
-  //       .then(response => {
-  //         const search = reponse.data.suggestions.filter(i=> i.searchterm.includes(this.state.search))
-  //         this.setState({result: search})
-  //       })
-  //       .catch(err => console.log(err))
-  //   }
-  
   apiCall = () => {
-    axios.get(`http://localhost:5000/search?q= ${this.state.search}`)
-    .then(response => {
-      this.setState({results: response.data})
-    })
-    .catch(error => console.log(error))
-   }
-
+    axios.get(`http://localhost:5000/search?q=${this.state.search}`)
+    .then(response => 
+      this.setState({results: response.data.suggestions.filter(a => a.searchterm.includes(this.state.search))}))
+    .catch(error => console.log(error.message))
+  }
+  
     render() {
       return (
         <div>
@@ -64,7 +52,7 @@ class InputForm extends Component {
                         onClick={this.resetSearch} >
             </button>}
             {this.state.search.length > 2 && 
-            <ItemList list={this.state.results.suggestions}/>}
+            <ItemList list={this.state.results}/>}
           </form>
         </div>
       )
